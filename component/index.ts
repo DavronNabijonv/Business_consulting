@@ -7,3 +7,8 @@ export { Banner as HomeBanner } from "./main/banner";
 export { Welcome } from "./main/welcome";
 export { Offer } from "./main/offer";
 export { Testimonal } from "./main/testimonal";
+
+// service page
+export { Banner as ServiceBanner } from "./service/banner";
+export { Count } from "./service/count";
+export { Navigate } from "./service/navigate";

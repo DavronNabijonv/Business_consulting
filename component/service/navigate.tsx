@@ -62,16 +62,16 @@ const SERVICES = [
 export function Navigate() {
   return (
     <>
-      <div className="bg-[#0D1F08] py-20">
-        <div className="max-w-300 w-full mx-auto space-y-15 ">
-          <div className="text-white text-3xl max-w-130 w-full">
+      <div className="bg-[#0D1F08] sm:py-20 py-10">
+        <div className="max-w-300 w-full mx-auto sm:space-y-15 space-y-10 lg:px-2 px-5">
+          <div className="text-white min-[450px]:text-3xl text-2xl max-w-130 w-full">
             Navigating Complex Legal Landscapes? We Can Help.
           </div>
           <div className="border-b border-white space-y-10 pb-15">
             {SERVICES.map((item) => (
               <div
                 key={item.id}
-                className="flex items-start justify-between gap-3 border-t border-white pt-5 sm:pr-20"
+                className="flex sm:flex-row flex-col items-start justify-between sm:gap-3 gap-8 max-sm:px-2 border-t border-white pt-5 sm:pr-20"
               >
                 <p className="text-xl">{item.title}</p>
                 <p className="max-w-80 w-full">{item.desc}</p>

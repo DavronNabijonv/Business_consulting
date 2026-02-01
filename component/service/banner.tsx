@@ -10,8 +10,8 @@ export function Banner() {
       />
 
       {/* content */}
-      <div className="max-w-350 w-full mx-auto relative z-10 h-full flex items-end justify-start">
-        <p className="text-3xl max-w-160 w-full">
+      <div className="max-w-350 w-full mx-auto lg:px-2 px-5 relative z-10 h-full flex items-end justify-start">
+        <p className="sm:text-3xl text-2xl max-w-160 w-full">
           At Jones & Brown Legal, we are committed to exceptional service and
           successful outcomes with:
         </p>

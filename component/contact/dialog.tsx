@@ -107,7 +107,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
+        <div className="absolute top-0 left-0 w-full h-full">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -115,7 +115,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm z-50 w-full h-full "
           />
 
           {/* Dialog */}
@@ -304,7 +304,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
               </motion.form>
             </motion.div>
           </div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   );

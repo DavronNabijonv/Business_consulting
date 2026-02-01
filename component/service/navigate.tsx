@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const SERVICES = [
   {
@@ -60,35 +65,90 @@ const SERVICES = [
 ];
 
 export function Navigate() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
   return (
     <>
       <div className="bg-[#0D1F08] sm:py-20 py-10">
-        <div className="max-w-300 w-full mx-auto sm:space-y-15 space-y-10 lg:px-2 px-5">
-          <div className="text-white min-[450px]:text-3xl text-2xl max-w-130 w-full">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8 }}
+          className="max-w-300 w-full mx-auto sm:space-y-15 space-y-10 lg:px-2 px-5"
+        >
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-white min-[450px]:text-3xl text-2xl max-w-130 w-full"
+          >
             Navigating Complex Legal Landscapes? We Can Help.
-          </div>
+          </motion.div>
+
+          {/* Services List */}
           <div className="border-b border-white space-y-10 pb-15">
-            {SERVICES.map((item) => (
-              <div
+            {SERVICES.map((item, index) => (
+              <motion.div
                 key={item.id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.3 + index * 0.1,
+                  ease: "easeOut",
+                }}
+                whileHover={{
+                  x: 10,
+                  transition: { duration: 0.3 },
+                }}
                 className="flex sm:flex-row flex-col items-start justify-between sm:gap-3 gap-8 max-sm:px-2 border-t border-white pt-5 sm:pr-20"
               >
-                <p className="text-xl">{item.title}</p>
-                <p className="max-w-80 w-full">{item.desc}</p>
-              </div>
+                <motion.p
+                  whileHover={{
+                    color: "#f7f4eb",
+                    transition: { duration: 0.2 },
+                  }}
+                  className="text-xl"
+                >
+                  {item.title}
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={isInView ? { opacity: 1 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4 + index * 0.1,
+                  }}
+                  className="max-w-80 w-full"
+                >
+                  {item.desc}
+                </motion.p>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="relative w-full h-[80vh]">
-        <Image
-          src="/service/image.png"
-          alt="divider Image"
-          fill
-          priority
-          className="w-full h-screen object-cover"
-        />
+      {/* Image Section */}
+      <div className="relative w-full h-[80vh] overflow-hidden">
+        <motion.div
+          initial={{ scale: 1.2, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="w-full h-full"
+        >
+          <Image
+            src="/service/image.png"
+            alt="divider Image"
+            fill
+            priority
+            className="w-full h-screen object-cover"
+          />
+        </motion.div>
       </div>
     </>
   );

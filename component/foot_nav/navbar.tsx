@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Contact } from "..";
 import { ContactDialog } from "../contact/dialog";
 
 export function Navbar() {

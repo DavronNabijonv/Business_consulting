@@ -12,3 +12,7 @@ export { Testimonal } from "./main/testimonal";
 export { Banner as ServiceBanner } from "./service/banner";
 export { Count } from "./service/count";
 export { Navigate } from "./service/navigate";
+
+// schedule page
+export { Banner as ScheduleBanner } from "./schedule/banner";
+export { Discuss } from "./schedule/discuss";

@@ -1,6 +1,6 @@
 export function Banner() {
   return (
-    <div className="relative min-h-screen flex items-end pb-10">
+    <div className="relative min-h-screen flex items-end pb-10 mt-17">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -10,11 +10,11 @@ export function Banner() {
       />
 
       {/* content */}
-      <div className="max-w-350 w-full mx-auto relative z-10 h-full flex items-end justify-start">
-        <div className="space-y-8">
-          <p className="text-white text-9xl">Jones & Brown Legal</p>
-          <div className="flex items-center justify-between gap-5">
-            <p className="text-3xl max-w-150 w-full">Deep expertise, decisive courtroom presence</p>
+      <div className="max-w-350 w-full mx-auto lg:px-2 px-5 relative z-10 h-full flex items-end justify-start">
+        <div className="sm:space-y-8 space-y-30">
+          <p className="text-white lg:text-9xl md:text-7xl text-5xl">Jones & Brown Legal</p>
+          <div className="flex lg:flex-row flex-col lg:items-center items-start justify-between gap-5">
+            <p className="lg:text-3xl text-2xl max-w-150 w-full">Deep expertise, decisive courtroom presence</p>
             <p className="text-xl max-w-100 w-full">
               We've been serving the Los Angeles area with expert legal counsel
               since 1976.

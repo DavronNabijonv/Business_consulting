@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="bg-[#f7f4eb] py-20">
-      <div className="max-w-7xl w-full mx-auto px-4 space-y-20">
+    <footer className="bg-[#f7f4eb] min-[500px]:py-20 py-10">
+      <div className="max-w-7xl w-full mx-auto px-4 min-[500px]:space-y-20 space-y-10">
         <div className="flex items-center gap-2 justify-between">
           <Image
             src="/Logo_black.png"
@@ -17,7 +17,7 @@ export function Footer() {
         <div className="text-black text-xl">
           Deep expertise, decisive courtroom presence
         </div>
-        <div className="max-w-200 w-full grid grid-cols-3 gap-2">
+        <div className="max-w-200 w-full grid min-[500px]:grid-cols-3 grid-cols-1 min-[500px]:gap-2 gap-8">
           <div className="text-md text-black spacy-y-2">
             <p>hello@gmail.com</p>
             <p>(090) 090-09-09</p>

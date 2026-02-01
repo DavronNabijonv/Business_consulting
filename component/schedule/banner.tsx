@@ -1,6 +1,6 @@
 export function Banner() {
   return (
-    <div className="relative min-h-[91vh] flex items-end pb-10">
+    <div className="relative min-h-[91vh] flex items-end pb-10 mt-17">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

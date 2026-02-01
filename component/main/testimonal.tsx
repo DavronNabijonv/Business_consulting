@@ -5,10 +5,10 @@ import { TestimonialSlider } from "./testimonalSlider/slider";
 export function Testimonal() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-10 py-30 bg-white text-center text-black ">
+      <div className="flex flex-col items-center justify-center sm:gap-10 gap-5 md:py-30 py-20 max-[450px]:py-10 bg-white text-center text-black ">
         {/* header */}
-        <p className="text-4xl font-medium">Hear From Our Clients</p>
-        <p className="max-w-120 w-full mx-auto text-lg">
+        <p className="sm:text-4xl text-3xl max-[350px]:text-2xl font-medium">Hear From Our Clients</p>
+        <p className="max-w-120 w-full mx-auto text-lg max-sm:px-3 ">
           We believe that our clients' experiences speak volumes about the
           quality of our legal services. Here's what some of them have to say:
         </p>

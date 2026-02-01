@@ -50,10 +50,10 @@ export function TestimonialSlider() {
   }
 
   return (
-    <div className="w-full py-8 px-4 sm:px-6 lg:px-4">
+    <div className="w-full md:py-8 sm:px-4 p-3">
       <div className="max-w-4xl mx-auto">
         {/* Testimonial Card */}
-        <div className="bg-[#f6f6f6] rounded-lg p-8 md:p-12 min-h-100 flex flex-col justify-between">
+        <div className="bg-[#f6f6f6] rounded-lg sm:p-8 p-3 md:p-12 min-h-100 flex flex-col justify-between max-lg:mx-2 ">
           {/* Testimonial Content */}
           <AnimatePresence mode="wait">
             <motion.div
@@ -79,7 +79,7 @@ export function TestimonialSlider() {
           </AnimatePresence>
 
           {/* Navigation Controls */}
-          <div className="flex items-center justify-center gap-6 mt-8 pt-8 border-t border-gray-300">
+          <div className="flex items-center justify-center gap-6 mt-8 pt-8 border-t border-gray">
             {/* Previous Button */}
             <button
               onClick={handlePrev}

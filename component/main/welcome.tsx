@@ -4,18 +4,18 @@ import Link from "next/link";
 export function Welcome() {
   return (
     <>
-      <div className="bg-[#f7f4eb] py-30 ">
-        <div className="space-y-10 max-w-300 w-full mx-auto">
+      <div className="bg-[#f7f4eb] md:py-30 py-20 max-[450px]:py-10">
+        <div className="space-y-10 max-w-300 w-full mx-auto lg:px-2 px-5 ">
           <p className="text-black text-3xl">Welcome to Jones & Brown Legal</p>
-          <div className="flex items-start gap-4">
-            <p className="text-black text-lg max-w-125 w-full">
+          <div className="flex md:flex-row flex-col items-start gap-4">
+            <p className="text-black text-lg md:max-w-125 w-full">
               Jones & Brown Legal has been a pillar of the Los Angeles legal
               community, providing expert legal counsel across a wide spectrum
               of practice areas. We are more than just attorneys, we are trusted
               advisors, dedicated advocates, and strategic partners committed to
               achieving the best possible outcomes for our clients.
             </p>
-            <p className="text-black text-lg max-w-126 w-full">
+            <p className="text-black text-lg md:max-w-126 w-full">
               We combine decades of experience with a deep understanding of the
               complexities of California law. Our team of seasoned trial
               attorneys boasts a proven track record of success in courtrooms
@@ -33,6 +33,7 @@ export function Welcome() {
           </Link>
         </div>
       </div>
+
       <div className="relative w-full h-screen">
         <Image
           src="/home/image2.png"

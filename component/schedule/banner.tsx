@@ -10,8 +10,8 @@ export function Banner() {
       />
 
       {/* content */}
-      <div className="max-w-350 w-full mx-auto relative z-10 h-full flex items-end justify-start">
-        <p className="text-8xl max-w-250 w-full">
+      <div className="max-w-350 w-full mx-auto relative lg:px-2 px-5 z-10 h-full flex items-end justify-start">
+        <p className="lg:text-8xl sm:text-6xl text-4xl max-w-250 w-full">
           Let us help you
         </p>
       </div>

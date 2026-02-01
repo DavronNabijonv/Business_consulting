@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+
 interface ContactDialogProps {
   isOpen: boolean;
   onClose: () => void;
@@ -20,30 +21,30 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
   >("idle");
 
   // Telegram Bot Configuration
-  const TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN"; // Replace with your bot token
-  const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID"; // Replace with your chat ID
+  const TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN";
+  const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID";
 
   // WhatsApp Configuration
-  const WHATSAPP_NUMBER = "1234567890"; // Replace with your WhatsApp number (with country code, no +)
+  const WHATSAPP_NUMBER = "1234567890";
 
-  // Prevent body scroll when dialog is open
-  useState(() => {
+  // ✅ TO'G'RI - useEffect ishlatish
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
+
     return () => {
       document.body.style.overflow = "unset";
     };
-  });
+  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Send to Telegram
       const telegramMessage = `
 🔔 New Contact Form Submission
 
@@ -67,7 +68,6 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
         },
       );
 
-      // Send to WhatsApp (opens WhatsApp with pre-filled message)
       const whatsappMessage = `Hello, I'm ${formData.name}. Phone: ${formData.phone}. Subject: ${formData.subject}`;
       const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
         whatsappMessage,
@@ -75,10 +75,8 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
 
       if (telegramResponse.ok) {
         setSubmitStatus("success");
-        // Open WhatsApp in new tab
         window.open(whatsappUrl, "_blank");
 
-        // Reset form after 2 seconds
         setTimeout(() => {
           setFormData({ name: "", phone: "", subject: "" });
           setSubmitStatus("idle");
@@ -107,7 +105,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="absolute top-0 left-0 w-full h-full">
+        <>
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -115,7 +113,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm z-50 w-full h-full "
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
           />
 
           {/* Dialog */}
@@ -304,7 +302,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
               </motion.form>
             </motion.div>
           </div>
-        </div>
+        </>
       )}
     </AnimatePresence>
   );

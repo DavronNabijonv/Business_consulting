@@ -16,6 +16,3 @@ export { Navigate } from "./service/navigate";
 // schedule page
 export { Banner as ScheduleBanner } from "./schedule/banner";
 export { Discuss } from "./schedule/discuss";
-
-// contact dialog
-export {ContactTrigger as Contact} from './contact/contact'

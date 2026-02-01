@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ContactDialog } from "../contact/dialog";
+import { ContactDialog } from "../dialog";
 
 const DISCUSS = [
   {

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ContactDialog } from "../contact/dialog";
+import { ContactDialog } from "../dialog";
 
 export function Navbar() {
   const page = usePathname();

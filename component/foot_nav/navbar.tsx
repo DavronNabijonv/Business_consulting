@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Contact } from "..";
 
 export function Navbar() {
   const page = usePathname();
@@ -32,7 +33,7 @@ export function Navbar() {
       >
         <div className="max-w-7xl w-full mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" >
             <motion.div
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -41,7 +42,8 @@ export function Navbar() {
             </motion.div>
           </Link>
 
-          {/* Desktop Nav */}
+          <div className="flex items-center gap-5 w-[95vw] justify-end" >
+            {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6 text-lg">
             {navItems.map((item, index) => (
               <Link key={item.href} href={item.href}>
@@ -50,7 +52,7 @@ export function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 + 0.3 }}
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="relative text-white/90 hover:text-white"
+                  className="relative text-white/90 hover:text-white "
                 >
                   {item.label}
                   {page === item.href && (
@@ -89,6 +91,10 @@ export function Navbar() {
               />
             </svg>
           </motion.button>
+
+          {/* contact */}
+          <Contact/>
+          </div>
         </div>
       </motion.nav>
 

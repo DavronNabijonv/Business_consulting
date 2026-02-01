@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Contact } from "..";
 
 const DISCUSS = [
   {
@@ -152,13 +153,7 @@ export function Discuss() {
           >
             Discover how we can help
           </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-black bg-white max-w-40 w-full px-6 py-2 rounded-full text-xl"
-          >
-            Contact US
-          </motion.button>
+          <Contact />
         </motion.div>
       </motion.div>
     </div>
